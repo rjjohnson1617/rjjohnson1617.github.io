@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="email" content="rjjohnson1617@outlook.com">
+	<meta name="description" content="Portfolio">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="js/typed.min.js"></script>
+	<title>Rachelle Johnson</title>
+</head>
+
+<body>
+	<div class="topnav">
+		<a class="active" href="#cvHome">Home</a>
+		<a href="pages/resume.html">Resume</a>
+		<a href="#blog">Blog</a>
+		<a href="#contact">Contact</a>
+	</div>
+	
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<div class="fakeButtons fakeClose"></div>
+				<div class="fakeButtons fakeMinimize"></div>
+				<div class="fakeButtons fakeZoom"></div>
+				&nbsp;&nbsp;&nbsp;rachellejohnson -- ~/code/portfolio
+			</h3>
+		</div>
+		<div class="panel-body">
+			<span class="element"></span>
+		</div>
+	</div>
+	
+	<p>**Made with typed.js!**</p>
+	
+	<div class="icon-bar">
+		<a href="https://www.facebook.com/Spankky.Johnson" class="facebook"><i class="fa fa-facebook"></i></a>
+		<a href="https://www.linkedin.com/in/rachellejjohnson/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+	</div>
+	
+</body>
+
+<script>
+	function isEmpty(s){
+		if(s == undefined || s == null || s == ''){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	function isBlank(s){
+		if(isEmpty(s)) {
+			return true;
+		} else {
+			if(s.split('').every(function(char){ return char == "\t" || char == ' ';})){
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	document.addEventListener('DOMContentLoaded', function(){
+            var data = `HELLO!
+    My name is Rachelle Johnson.
+    I am a self-proclaimed nerd and love technology.
+    Take some time to look around my website.
+	Feel free to reach out to me if you have an interesting
+	idea to chat about, have a job I may enjoy, or just want
+	to nerd out together!
+    Thanks!! `;
+            data = data.split("\n").map(function(line){
+              if(isBlank(line)){
+                return '<span class="rachelle"></span><br />';
+              } else {
+                return "<span class=\"rachelle\">          #          " + line + "</span><br />"
+              }
+            }).join("\n")
+            data = '<span class="bash"> intro</span><br>'
+                  + data
+                  + '<span class="rachelle">                    exit()<br>'
+                  + '<span class="bash"></span>'
+            Typed.new('.element', {
+              strings: [data],
+              typeSpeed: 20,
+              loop: false
+            });
+          });
+	
+</script>
+	
+</html>
